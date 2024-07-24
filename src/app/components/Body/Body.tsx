@@ -14,7 +14,7 @@ const Body = () => {
     const {register, handleSubmit} = useForm();
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
-    const [dob, setDob] = useState(``);
+    const [dob, setDob] = useState('');
     const [city, setCity] = useState('');
     const [phone, setPhone] = useState('');
     const [gender, setGender] = useState('female');
@@ -73,7 +73,6 @@ const Body = () => {
                     <Grid item xs={12} sm={3}>
                         <TextField
                             type='number'
-                            InputProps={{inputProps: {max: 2, min: 0}}}
                             autoComplete='age'
                             // required 
                             fullWidth
@@ -92,7 +91,8 @@ const Body = () => {
                     <Grid item xs={12} sm={5}>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker 
-                                value={dayjs(dob)}
+                                format='DD/MM/YYYY'
+                                value={dayjs(dayjs(dob).format('DD/MM/YYYY'))}
                                 onChange={(value) => setDob(dayjs(value).format('DD/MM/YYYY'))}
                             />
                         </LocalizationProvider>
