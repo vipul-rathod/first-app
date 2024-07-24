@@ -1,0 +1,17 @@
+.body {
+    font-size: 20px;
+    text-align: center;
+}
+
+.background {
+    background-color:rgb(203, 242, 242);
+}
+
+.textfield {
+    padding: 0.5rem;
+}
+
+.padding {
+    padding: 0.5rem;
+    
+}
